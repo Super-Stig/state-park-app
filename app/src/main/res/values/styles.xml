@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="actionBarTheme" parent="Widget.AppCompat.ActionBar.Solid">
+
+        <item name="background">@color/primaryDarkColor</item>
+
+    </style>
+
+
+<style name="chipStyle">
+
+    <item name="background">@color/primaryColor</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+
+</style>
+
+
+
+</resources>

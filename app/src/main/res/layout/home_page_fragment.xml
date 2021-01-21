@@ -2,34 +2,141 @@
 
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/main_container"
-        android:background="@color/primaryColor"
-        tools:context=".MainActivity">
+        android:background="@drawable/ic_sheet_background">
 
-        <fragment
-            android:elevation="1dp"
-            app:behavior_peekHeight="70dp"
-            android:id="@+id/filter_fragment"
-            android:name="com.mattiaferigutti.backdrop.WindowFragment"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/primaryLightColor"
+                    android:text="selection 1"
+                    android:textColor="@color/primaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/chip2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/primaryLightColor"
+                    android:text="selection 2"
+                    android:textColor="@color/primaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/chip3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/chip1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/primaryLightColor"
+                    android:text="selection 3"
+                    android:textColor="@color/primaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/chip2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="@color/secondaryDarkColor"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView1"
+            app:layout_constraintTop_toTopOf="@+id/cardView1">
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            app:cardBackgroundColor="@color/secondaryDarkColor"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView4"
+            app:layout_constraintEnd_toStartOf="@+id/cardView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView1" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="22dp"
+            app:cardBackgroundColor="@color/secondaryDarkColor"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toStartOf="@+id/cardView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroup">
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            app:cardBackgroundColor="@color/secondaryDarkColor"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="@+id/cardView3"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:behavior_skipCollapsed="true"
-            app:layout_behavior=".GestureLockedBottomSheetBehavior"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:menu="@menu/main_navigation_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

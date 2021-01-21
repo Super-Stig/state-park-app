@@ -8,19 +8,46 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/main_container"
+        android:background="@color/primaryDarkColor"
         tools:context=".MainActivity">
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="20dp">
+
+
+            <TextView
+                android:id="@+id/setting1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Setting1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <fragment
+            android:id="@+id/navigation_sheet"
+            android:name="com.example.myapplication.screens.backdrop.FrontSheetForBackdrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="1dp"
+            app:behavior_peekHeight="70dp"
+            app:behavior_skipCollapsed="true"
+            app:layout_behavior=".screens.backdrop.GestureLockedBottomSheetBehavior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>
