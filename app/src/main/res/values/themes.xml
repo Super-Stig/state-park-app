@@ -3,7 +3,7 @@
     <style name="Theme.MyApplication" parent="mainAppToolbar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryLightColor</item>
-        <item name="colorPrimaryVariant">@color/secondaryLightColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
         <item name="colorOnPrimary">@color/primaryDarkColor</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/secondaryColor</item>
@@ -11,6 +11,8 @@
         <item name="colorOnSecondary">@color/primaryLightColor</item>
 
         <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
         <item name="actionBarStyle">@style/actionBarTheme</item>
         <item name="badgeStyle">@style/mainBadgeStyle</item>
         <!-- Status bar color. -->
