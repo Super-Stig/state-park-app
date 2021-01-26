@@ -16,6 +16,7 @@
         tools:context=".MainActivity">
 
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,12 +41,14 @@
             android:layout_height="match_parent"
             android:elevation="1dp"
             app:behavior_peekHeight="70dp"
+            app:behavior_expandedOffset="100dp"
             app:behavior_skipCollapsed="true"
             app:layout_behavior=".screens.backdrop.GestureLockedBottomSheetBehavior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/front_sheet_for_backdrop" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

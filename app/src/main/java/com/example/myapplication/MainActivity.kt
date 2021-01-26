@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.screens.backdrop.OnBottomSheetCallbacks
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.elevation = 0F
+        supportActionBar?.title = "Home"
+        supportActionBar?.setLogo(R.drawable.ic_search_icon)
+        //supportActionBar?.setIcon()
 
         configureBackdrop()
 

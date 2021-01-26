@@ -4,15 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Search"
-        android:id="@+id/search_top_menu_button"
+        android:id="@+id/app_bar_search"
         android:icon="@drawable/ic_search_icon"
+        android:title="Search"
         app:showAsAction="always"
-        />
+        app:actionViewClass="android.widget.SearchView" />
     <item
         android:title="Menu"
         android:id="@+id/hamburger_top_menu_button"
         android:icon="@drawable/ic_hamburger_men_icon"
         app:showAsAction="always"
         />
+
 </menu>
