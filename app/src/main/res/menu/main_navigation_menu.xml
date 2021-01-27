@@ -5,12 +5,17 @@
         android:id="@+id/home"
         android:enabled="true"
         android:icon="@drawable/ic_home_unselected"
-        android:title="Home"/>
+        android:title="Home" />
     <item
         android:id="@+id/maps"
         android:enabled="true"
         android:icon="@drawable/ic_maps_unselected"
         android:title="Maps"/>
+
+    <item
+        android:id="@+id/fakeButtonDontUse"
+        android:enabled="false"
+        android:title="fakeButton"/>
     <item
         android:id="@+id/news"
         android:enabled="true"

@@ -20,13 +20,36 @@
 
 </style>
 
-    <style name="mainNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+    <style name="mainNavigationStyle" parent="Widget.MaterialComponents.BottomAppBar">
 
-        <item name="backgroundTint">@color/white</item>b
+        <item name="backgroundTint">@color/secondaryDarkColor</item>b
         <item name="itemIconTint">@color/secondaryLightColor</item>
         <item name="itemRippleColor">@color/secondaryLightColor</item>
         <item name="itemTextColor">@color/secondaryLightColor</item>
         <item name="elevation">0dp</item>
+    </style>
+
+    <style name="navBar" parent="Widget.MaterialComponents.BottomNavigationView">
+
+        <item name="backgroundTint">@color/clear</item>
+        <item name="elevation">0dp</item>
+        <item name="itemTextColor">@color/secondaryLightColor</item>
+        <item name="itemIconTint">@color/secondaryLightColor</item>
+        <item name="android:layout_gravity">center</item>
+
+
+    </style>
+
+
+
+
+    <style name="floatingButton" parent="Widget.Design.FloatingActionButton">
+
+        <item name="itemIconTint"> @color/white</item>
+        <item name="iconTint">@color/white</item>
+        <item name="backgroundTint">@color/primaryDarkColor</item>
+
+
     </style>
 
     <style name="mainBadgeStyle" parent="Widget.MaterialComponents.Badge">
