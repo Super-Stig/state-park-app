@@ -5,10 +5,15 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
+import androidx.navigation.NavDestination
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FrontSheetForBackdropBinding
+import com.example.myapplication.screens.homepage.HomePageFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -28,21 +33,18 @@ class FrontSheetForBackdrop:BottomSheetDialogFragment() {
 
         val navView = binding.navigationButtonHolder
 
+
+
+
         navView.setOnNavigationItemSelectedListener {
-            when(MenuItem){
-                else ->
+            when (it.itemId){
+                R.id.home_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.homePageFragment)
+                R.id.maps_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.mapPageFragment)
+                R.id.news_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.newsPageFragment)
+                R.id.resources_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.resPageFragment)
             }
+            true
         }
-
-
-
-
-
-
-
-
-
-
 
 
         //

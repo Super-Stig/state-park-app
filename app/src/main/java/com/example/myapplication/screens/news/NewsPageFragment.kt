@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.myapplication.databinding.MapsPageFragmentBinding
+import com.example.myapplication.databinding.NewsPageFragmentBinding
 
 class NewsPageFragment:Fragment() {
 
-    lateinit var binding: MapsPageFragmentBinding
+    lateinit var binding: NewsPageFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = MapsPageFragmentBinding.inflate(inflater,container,false)
+        binding = NewsPageFragmentBinding.inflate(inflater,container,false)
         ///
         ///
         ///

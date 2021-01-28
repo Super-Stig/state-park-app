@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/home_menu_item"
         android:enabled="true"
         android:icon="@drawable/ic_home_unselected"
         android:title="Home" />
     <item
-        android:id="@+id/maps"
+        android:id="@+id/maps_menu_item"
         android:enabled="true"
         android:icon="@drawable/ic_maps_unselected"
         android:title="Maps"/>
@@ -17,12 +17,12 @@
         android:enabled="false"
         android:title="fakeButton"/>
     <item
-        android:id="@+id/news"
+        android:id="@+id/news_menu_item"
         android:enabled="true"
         android:icon="@drawable/ic_news_unselected"
         android:title="News"/>
     <item
-        android:id="@+id/resources"
+        android:id="@+id/resources_menu_item"
         android:title="Resources"
         android:enabled="true"
         android:icon="@drawable/ic_resources_unselected"/>
