@@ -30,6 +30,11 @@ class NewsAdaptor: ListAdapter<NewsAdaptorData, NewsAdaptor.AlternativeCounterVi
 
         fun bind(position: Int, holder: AlternativeCounterViewHolder) {
             val item = getItem(position)
+
+            holder.binding.contentDescription.text = item.content
+            holder.binding.newsHeader.text = item.name
+            holder.binding.iconForNews.setImageResource(item.iconResource)
+
         }
     }
 

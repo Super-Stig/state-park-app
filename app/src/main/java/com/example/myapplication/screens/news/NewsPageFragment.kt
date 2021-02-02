@@ -1,11 +1,13 @@
 package com.example.myapplication.screens.news
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.NewsPageFragmentBinding
 import com.example.myapplication.screens.news.recylerview.NewsAdaptor
 
@@ -20,6 +22,8 @@ class NewsPageFragment:Fragment() {
         ///
         ///
 
+        context?.let { viewModel.setListOfNewsObjectsToCastToView(it) }
+
 
         val recyclerView = binding.newsPageRecylerView
         val adapter = NewsAdaptor()
@@ -32,10 +36,6 @@ class NewsPageFragment:Fragment() {
                 adapter.notifyDataSetChanged()
             }
         })
-
-
-
-
 
 
 

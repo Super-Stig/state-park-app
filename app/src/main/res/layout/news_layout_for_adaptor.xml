@@ -30,7 +30,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/icon_for_news"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
                     android:text="laounn ammcic ldkuiodifjo nnnalsidl idoaposdik 3uw hk ksdjfhkjkliuty nddgjsh   hddskkfgy"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintStart_toEndOf="@+id/icon_for_news"
                     app:layout_constraintTop_toBottomOf="@+id/news_header" />
 
                 <TextView
@@ -66,7 +66,7 @@
                     android:textAllCaps="true"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintStart_toEndOf="@+id/icon_for_news"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
