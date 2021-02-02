@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.databaces.NewsDatabase
 import com.example.myapplication.databinding.NewsPageFragmentBinding
 import com.example.myapplication.screens.news.recylerview.NewsAdaptor
 
@@ -21,8 +22,13 @@ class NewsPageFragment:Fragment() {
         ///
         ///
         ///
+        val application = requireNotNull(this.activity).application
+        val dataSource = NewsDatabase.getInstance(application).newsDatabaseDao
+        val viewModelFactory = NewsModelFactory(dataSource,application)
 
-        context?.let { viewModel.setListOfNewsObjectsToCastToView(it) }
+        
+
+        viewModel.setListOfNewsObjectsToCastToView()
 
 
         val recyclerView = binding.newsPageRecylerView
