@@ -21,6 +21,6 @@ interface NewsDatabaseDao{
     fun clear()
 
     @Query("SELECT * FROM news_data_for_adaptor_to_cast_to_view ORDER BY newsId DESC")
-    fun getAllNights():LiveData<List<NewsAdaptorData>>
+    fun getListOfNewsArticals():LiveData<List<NewsAdaptorData>>
 
 }
