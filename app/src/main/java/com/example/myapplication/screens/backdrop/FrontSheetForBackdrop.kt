@@ -39,7 +39,7 @@ class FrontSheetForBackdrop:BottomSheetDialogFragment() {
         navView.setOnNavigationItemSelectedListener {
             when (it.itemId){
                 R.id.home_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.homePageFragment)
-                R.id.maps_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.mapPageFragment)
+                R.id.maps_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.mapsPageFragment)
                 R.id.news_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.newsPageFragment)
                 R.id.resources_menu_item -> Navigation.findNavController(binding.navView).navigate(R.id.resPageFragment)
             }

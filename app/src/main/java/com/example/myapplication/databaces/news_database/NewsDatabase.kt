@@ -1,4 +1,4 @@
-package com.example.myapplication.databaces
+package com.example.myapplication.databaces.news_database
 
 import android.content.Context
 import androidx.room.Database
@@ -17,7 +17,7 @@ abstract class NewsDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: NewsDatabase? = null
 
-        fun getInstance(context: Context) : NewsDatabase{
+        fun getInstance(context: Context) : NewsDatabase {
             synchronized(this){
                 var instance = INSTANCE
 

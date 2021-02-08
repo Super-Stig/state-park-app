@@ -4,12 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.R
-import com.example.myapplication.databaces.NewsDatabaseDao
+import com.example.myapplication.databaces.map_markers_database.MapMarkersDatabaseDao
+import com.example.myapplication.databaces.news_database.NewsDatabaseDao
 import com.example.myapplication.screens.news.recylerview.NewsAdaptorData
 import kotlinx.coroutines.*
 
-class NewsPageViewModel(private val database:NewsDatabaseDao, application:Application):AndroidViewModel(application) {
+class NewsPageViewModel(private val database: NewsDatabaseDao, application:Application):AndroidViewModel(application) {
 
     private var _listOfNewsObjectsToCastToView = database.getListOfNewsArticles()
     fun listOfNewsObjectsToCastToView(): LiveData<List<NewsAdaptorData>> = _listOfNewsObjectsToCastToView

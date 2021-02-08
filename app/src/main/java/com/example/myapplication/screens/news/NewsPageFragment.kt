@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.R
-import com.example.myapplication.databaces.NewsDatabase
+import com.example.myapplication.databaces.news_database.NewsDatabase
 import com.example.myapplication.databinding.NewsPageFragmentBinding
 import com.example.myapplication.screens.news.recylerview.NewsAdaptor
 

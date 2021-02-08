@@ -1,4 +1,4 @@
-package com.example.myapplication.databaces
+package com.example.myapplication.databaces.news_database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

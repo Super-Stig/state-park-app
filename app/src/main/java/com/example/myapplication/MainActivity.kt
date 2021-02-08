@@ -1,12 +1,15 @@
 package com.example.myapplication
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.myapplication.screens.backdrop.OnBottomSheetCallbacks
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,8 +29,7 @@ class MainActivity : AppCompatActivity() {
         bottomSheet?.setOnClickListener {
             if (mainBottomSheetBehavior?.state == BottomSheetBehavior.STATE_COLLAPSED){
                 openBottomSheet()
-            }else
-            {}
+            }
         }
     }
 
@@ -77,4 +79,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
 }
