@@ -1,6 +1,5 @@
 package com.example.myapplication.screens.news
 
-import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.databaces.NewsDatabase
 import com.example.myapplication.databinding.NewsPageFragmentBinding
@@ -45,6 +43,11 @@ class NewsPageFragment:Fragment() {
                 adapter.notifyDataSetChanged()
             }
         })
+
+        viewModel.setNewsArticleList()
+
+
+
 
         binding.viewModel = viewModel
 

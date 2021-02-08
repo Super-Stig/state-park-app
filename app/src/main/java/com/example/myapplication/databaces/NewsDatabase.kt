@@ -22,7 +22,7 @@ abstract class NewsDatabase: RoomDatabase() {
                 var instance = INSTANCE
 
                 if (instance == null){
-                    instance = Room.databaseBuilder( context.applicationContext, NewsDatabase::class.java, "news_feed")
+                    instance = Room.databaseBuilder( context.applicationContext, NewsDatabase::class.java, "news_feed_database")
                         .fallbackToDestructiveMigration()
                         .build()
 
