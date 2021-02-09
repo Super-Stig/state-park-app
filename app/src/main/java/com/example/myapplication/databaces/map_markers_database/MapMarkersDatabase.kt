@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.myapplication.screens.map.MapMarkersData
 
 
-@Database(entities = [MapMarkersData::class], version = 1, exportSchema = false)
+@Database(entities = [MapMarkersData::class], version = 3, exportSchema = false)
 abstract class MapMarkersDatabase: RoomDatabase() {
 
     abstract val  mapMarkersDatabaseDao: MapMarkersDatabaseDao

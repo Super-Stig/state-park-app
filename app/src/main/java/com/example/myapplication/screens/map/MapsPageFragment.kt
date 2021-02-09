@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import java.util.*
 import android.Manifest
 import android.app.Application
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.databaces.map_markers_database.MapMarkersDatabase
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -29,6 +30,7 @@ class MapsPageFragment : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
     //
     //
     lateinit var viewModel: MapPageViewModel
+    lateinit var listOfMarkers: MutableList<MapMarkersData>
 
 
     private val callback = OnMapReadyCallback { googleMap ->
@@ -37,25 +39,23 @@ class MapsPageFragment : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
 
         val latitude = 38.0131
         val longitude = -121.1013
-        val zoomLevel = 18F
+        val zoomLevel = 13F
 
         val homeLatLng = LatLng(latitude,longitude)
 
+        listOfMarkers = mutableListOf(MapMarkersData("home",latitude,longitude))
 
         map = googleMap
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(homeLatLng,zoomLevel))
-        googleMap.addMarker(MarkerOptions().position(homeLatLng))
         enableMyLocation()
         setMapLongClick(googleMap)
         setPoiClick(googleMap)
-        loadSavedLocations(viewModel)
     }
 
-    private fun loadSavedLocations(viewModel: MapPageViewModel) {
-        val listOfData = this.viewModel.listOfAllMarkers()
+    private fun loadSavedLocations() {
 
-        if (listOfData.isNotEmpty()){
-        for (data in listOfData){
+        if (listOfMarkers.isNotEmpty()     ){
+        for (data in listOfMarkers){
             val snippet = String.format(
                 Locale.getDefault(),
                 "Lat: %1$.5f, Long: %2$.5f",
@@ -116,9 +116,18 @@ class MapsPageFragment : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
 
         val dataSource = MapMarkersDatabase.getInstance(application).mapMarkersDatabaseDao
         val viewModelFactory = MapsPageModelFactory(dataSource,application)
-        var inviewModel = ViewModelProvider(this,viewModelFactory).get(MapPageViewModel::class.java)
+        var viewModelProvider = ViewModelProvider(this,viewModelFactory).get(MapPageViewModel::class.java)
 
-            inviewModel = viewModel
+        viewModel = viewModelProvider
+
+        viewModel.listOfAllMarkers().observe(viewLifecycleOwner, androidx.lifecycle.Observer{
+            it?.let {
+                listOfMarkers = it
+                loadSavedLocations()
+            }
+        })
+
+
 
 
         return inflater.inflate(R.layout.fragment_maps, container, false)
@@ -148,7 +157,7 @@ class MapsPageFragment : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
         grantResults: IntArray
     ) {
         if(requestCode == REQUEST_LOCATION_PERMISSION){
-            if(grantResults.size >0 && (grantResults[0] == PackageManager.PERMISSION_GRANTED)){
+            if(grantResults.isNotEmpty() && (grantResults[0] == PackageManager.PERMISSION_GRANTED)){
                 enableMyLocation()
             }
         }

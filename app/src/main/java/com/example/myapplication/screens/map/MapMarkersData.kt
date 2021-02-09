@@ -19,6 +19,6 @@ data class MapMarkersData(
     val longitude:Double = 0.0,
 
     @PrimaryKey(autoGenerate = true)
-    val key:Long = 0L
+    val id:Long = 0L
 
 )

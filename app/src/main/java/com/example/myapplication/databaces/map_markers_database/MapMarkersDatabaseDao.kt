@@ -1,6 +1,6 @@
 package com.example.myapplication.databaces.map_markers_database
 
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -11,10 +11,10 @@ import com.example.myapplication.screens.map.MapMarkersData
 interface MapMarkersDatabaseDao {
 
     @Insert
-    fun insert(marker: MapMarkersData)
+    fun insert(markers: MapMarkersData)
 
-    @Query("SELECT * FROM map_markers_information_table ORDER BY `key` DESC")
-    fun getAllMarkers(): List<MapMarkersData>
+    @Query("SELECT * FROM map_markers_information_table ORDER BY id DESC")
+    fun getAllMarkers(): LiveData<MutableList<MapMarkersData>>
 
 
     @Query("DELETE FROM map_markers_information_table")
