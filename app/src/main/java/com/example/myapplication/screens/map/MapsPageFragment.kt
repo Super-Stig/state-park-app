@@ -101,7 +101,9 @@ class MapsPageFragment : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
                     .position(poi.latLng)
                     .title(poi.name)
             )
-            poiMarker.showInfoWindow()
+            if (poiMarker != null) {
+                poiMarker.showInfoWindow()
+            }
         }
     }
 
